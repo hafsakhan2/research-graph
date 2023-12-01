@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Point Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="map-container">
+        <h1>Construction Pollution Visualization </h1>
+        <img src="Map.jpg" alt="Map Image" id="mapImage">
+        <div class="red-circle" id="redCircle" data-tooltip=""></div>
+    </div>
+    <div class="slider-container">
+        <div id="timestampDisplay">Time Stamp: </div>
+        <input type="range" min="0" max="0" value="0" id="slider">
+        <span id="dataDisplay"></span> <!-- Tooltip container for displaying data -->
+    </div>
+    <script src="map-data.js"></script>
+    <div class="info-button-container">
+        <button id="infoButton">Info</button>
+        <div id="infoPopup" class="info-popup">
+            This project was done by Hafsa Khan for Undergraduate Research at Virginia Tech.
+        </div>
+    </div>
+</body>
+</html>

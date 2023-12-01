@@ -1,0 +1,138 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.map-container {
+    position: relative;
+    text-align: center;
+}
+
+#mapImage {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 100%;
+    height: auto;
+}
+
+.red-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    opacity: 0.5;
+}
+
+.slider-container {
+    margin-top: 20px;
+}
+
+#dataDisplay {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+    font-size: 14px;
+}
+
+
+/* --------- */
+
+.tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    visibility: hidden; /* Start hidden */
+    z-index: 10;
+    top: 20px; /* Adjust if needed */
+    left: 20px; /* Adjust if needed */
+}
+
+.red-circle:hover + .tooltip {
+    visibility: visible; /* Show on hover */
+}
+
+.red-circle {
+    /* ...existing styles... */
+    cursor: pointer; /* To indicate it's interactive */
+}
+
+.red-circle:hover::after {
+    content: attr(data-tooltip); /* Display the tooltip text */
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    white-space: nowrap;
+    background-color: #fff;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 24px;
+    transform: translateX(-50%); /* Center the tooltip */
+    z-index: 100;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center; /* Centers the slider horizontally */
+    align-items: center; /* Centers the slider vertically (if needed) */
+    flex-direction: column; /* Stacks children vertically */
+    margin-top: 20px;
+}
+
+#slider {
+    width: 400%; /* Increase the width to 400% of its original size */
+    /* Other styles... */
+}
+
+#timestampDisplay {
+    font-size: 24px;
+}
+
+
+.info-button-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+#infoButton {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Top/bottom and left/right padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block level element */
+    font-size: 16px; /* Font size */
+    margin: 4px 2px; /* Margin around the button */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition-duration: 0.4s; /* Transition effect duration */
+}
+
+#infoButton:hover {
+    background-color: #45a049; /* Darker shade of green on hover */
+}
+
+.info-popup {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    /* Additional styling */
+}
